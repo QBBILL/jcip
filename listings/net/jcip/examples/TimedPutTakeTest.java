@@ -1,6 +1,6 @@
 package net.jcip.examples;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CyclicBarrier;
 
 /**
  * TimedPutTakeTest
@@ -10,7 +10,7 @@ import java.util.concurrent.*;
  * @author Brian Goetz and Tim Peierls
  */
 public class TimedPutTakeTest extends PutTakeTest {
-    private BarrierTimer timer = new BarrierTimer();
+    private net.jcip.examples.BarrierTimer timer = new net.jcip.examples.BarrierTimer();
 
     public TimedPutTakeTest(int cap, int pairs, int trials) {
         super(cap, pairs, trials);

@@ -1,12 +1,14 @@
 package net.jcip.examples;
 
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
-
 import junit.framework.TestCase;
 
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
- * PutTakeTest
+ * net.jcip.examples.PutTakeTest
  * <p/>
  * Producer-consumer test program for BoundedBuffer
  *
@@ -15,7 +17,7 @@ import junit.framework.TestCase;
 public class PutTakeTest extends TestCase {
     protected static final ExecutorService pool = Executors.newCachedThreadPool();
     protected CyclicBarrier barrier;
-    protected final SemaphoreBoundedBuffer<Integer> bb;
+    protected final net.jcip.examples.SemaphoreBoundedBuffer<Integer> bb;
     protected final int nTrials, nPairs;
     protected final AtomicInteger putSum = new AtomicInteger(0);
     protected final AtomicInteger takeSum = new AtomicInteger(0);
@@ -26,7 +28,7 @@ public class PutTakeTest extends TestCase {
     }
 
     public PutTakeTest(int capacity, int npairs, int ntrials) {
-        this.bb = new SemaphoreBoundedBuffer<Integer>(capacity);
+        this.bb = new net.jcip.examples.SemaphoreBoundedBuffer<Integer>(capacity);
         this.nTrials = ntrials;
         this.nPairs = npairs;
         this.barrier = new CyclicBarrier(npairs * 2 + 1);

@@ -13,10 +13,10 @@ public class ThisEscape {
             public void onEvent(Event e) {
                 doSomething(e);
             }
-        });
+        });//当EventListener实例发布时,ThisEscape的实例逸出了,原因就是调用了ThisEscape实例方法doSomething
     }
-
     void doSomething(Event e) {
+        //this引用逸出
     }
 
 
